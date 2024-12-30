@@ -1,11 +1,18 @@
 from random import choice
 
-boba = [["Green Tea", "Milk Foam Series", "Under 300 Calories"], ["Wintermelon", "Milk Foam Series", "Under 500 Calories"],
-        ["Caramel Milk Tea", "Milk Tea Series", "Under 500 Calories"]]
+tea_bases = ["Green Tea", "Black Tea", "Oolong Tea"]
+flavors = ["Wintermelon", "Caramel", "Mango"]
+sugar_levels = ["0%", "50%", "100%"]
+toppings = ["Boba Pearls", "Grass Jelly", "Pudding"]
 
-print("Select from the Milk Foam Series or the Milk Tea Series?")
-series = input()
+def random_boba():
+    return {
+        "Tea Base": choice(tea_bases),
+        "Flavor": choice(flavors),
+        "Sugar Level": choice(sugar_levels),
+        "Toppings": choice(toppings)
+    }
 
-for item in boba:
-    if item[1] == series:
-        print (series + " boba: " + item[0])
+print("Randomized Boba Drink:")
+for key, value in random_boba().items():
+    print(f"{key}: {value}")
